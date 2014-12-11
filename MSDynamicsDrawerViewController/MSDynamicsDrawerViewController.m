@@ -190,7 +190,7 @@
 
 - (UIViewController *)viewControllerForStatusBarAppearance
 {
-    if (((self._dynamicAnimator.isRunning) && self.panePositioningBehavior.targetPaneState == MSDynamicsDrawerPaneStateOpen) || self.paneState == MSDynamicsDrawerPaneStateOpen) {
+    if (self._dynamicAnimator.isRunning || self.paneState == MSDynamicsDrawerPaneStateOpen || self.paneState == MSDynamicsDrawerPaneStateOpenWide) {
         return [self drawerViewControllerForDirection:self.currentDrawerDirection];
     } else {
         return self.paneViewController;
